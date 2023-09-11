@@ -1,0 +1,47 @@
+/* Add styles for the task list component here */
+
+/* Style the table */
+table {
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 20%;
+    border-style: groove;
+    border-collapse: collapse;
+
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+   
+  th, td{
+    padding: 10px;
+    text-align: center;
+   
+  }
+
+  /* Style the Edit and Delete buttons */
+  button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #3666e0f1;
+    color: #fff;
+   
+  }
+  .navbar-button{
+    margin-left: 46%;
+  }
+  button:hover {
+    background-color: #0d4682;
+  }
+  
+  /* Style the Add Task button */
+  
+  
+  /* Style the form input fields for editing tasks */
+  input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  

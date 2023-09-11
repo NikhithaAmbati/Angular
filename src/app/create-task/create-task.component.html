@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 style="text-align: center;">Create Task</h1>
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="name">Task Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="newTask.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="text" class="form-control" id="status" [(ngModel)]="newTask.status" name="status" required>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input type="text" class="form-control" id="startDate" [(ngModel)]="newTask.startDate" name="startDate" required>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input type="text" class="form-control" id="endDate" [(ngModel)]="newTask.endDate" name="endDate" required>
+    </div><br><br>
+    <button type="submit">Create Task</button><button routerLink="/tasks" style="margin-left: 27px;">Read Tasks </button>
+  </form>
+</div>

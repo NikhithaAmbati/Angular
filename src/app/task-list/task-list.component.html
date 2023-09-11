@@ -1,0 +1,44 @@
+<div class="container">
+ 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Task Name</th>
+        <th>Status</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.id }}</td>
+        <td>{{ task.name}}</td>
+        <td>
+          <ng-container *ngIf="!editing || task.id !== editingTask?.id; else editField">
+            {{ task.status }}
+          </ng-container>
+          <ng-template #editField>
+            <input type="text" [(ngModel)]="editingTaskStatus[task.id]" />
+          </ng-template>
+        </td>
+        <td>{{ task.startDate }}</td>
+        <td>{{ task.endDate }}</td>
+        <td>
+          <ng-container *ngIf="!editing || task.id !== editingTask?.id; else editActions">
+            <button (click)="editTask(task)">Edit</button>
+            <button (click)="deleteTask(task.id)">Delete</button>
+          </ng-container>
+          <ng-template #editActions>
+            <button (click)="updateTask(task)">Save</button>
+            <button (click)="cancelEdit()">Cancel</button>
+          </ng-template>
+        </td>
+      </tr>
+      
+    </tbody>
+    
+  </table><br><br>
+  <button routerLink="/create" class="navbar-button"> Add Task</button>
+</div>
